@@ -89,3 +89,6 @@ alt_title VARCHAR(150) NOT NULL,
 PRIMARY KEY (game_id, alt_title),
 FOREIGN KEY (game_id) REFERENCES games (game_id)
 );
+
+ALTER TABLE users
+ADD CONSTRAINT unique_username UNIQUE (username);
