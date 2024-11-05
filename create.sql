@@ -15,6 +15,9 @@ user_id INT NOT NULL,
 FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
 
+ALTER TABLE collections
+ADD CONSTRAINT oneColPerUser UNIQUE (user_id);
+
 CREATE TABLE countries (
 country_code CHAR(2) PRIMARY KEY,
 country_name VARCHAR(55) NOT NULL
