@@ -93,5 +93,13 @@ PRIMARY KEY (game_id, alt_title),
 FOREIGN KEY (game_id) REFERENCES games (game_id)
 );
 
+create table games_embedding(
+game_id int not null,
+embedding_value_title JSON not null,
+embedding_value_genre JSON not null,
+FOREIGN KEY (game_id) references games (game_id)
+);
+
+
 ALTER TABLE users
 ADD CONSTRAINT unique_username UNIQUE (username);
