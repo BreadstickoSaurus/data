@@ -101,5 +101,13 @@ FOREIGN KEY (game_id) references games (game_id)
 );
 
 
+CREATE TABLE collectionState (
+    collection_id INT NOT NULL,
+    public BOOL DEFAULT FALSE,
+    PRIMARY KEY (collection_id),
+    FOREIGN KEY (collection_id) REFERENCES collections (collection_id)
+);
+
+
 ALTER TABLE users
 ADD CONSTRAINT unique_username UNIQUE (username);
